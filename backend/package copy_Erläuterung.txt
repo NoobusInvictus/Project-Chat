@@ -1,0 +1,53 @@
+Erläuterung zum JSON Package:
+Dies ist die `package.json` Datei eines typischen Node.js-Projekts. 
+Diese Datei ist sehr wichtig, da sie verschiedene Informationen und Metadaten zu Ihrem Projekt enthält. 
+Hier sind die Teile, die Sie bereitgestellt haben, erklärt:
+
+- `name`: Der Name Ihres Projekts.
+- `version`: Die aktuelle Version Ihres Projekts.
+- `description`: Eine kurze Beschreibung Ihres Projekts.
+- `main`: Die Hauptdatei Ihres Projekts, die Node.js startet, wenn es Ihr Projekt startet.
+- `scripts`: Hier können Sie Befehle platzieren, die ausgeführt werden können, indem Sie `npm run <Befehlsname>` eingeben. 
+    Im Moment haben Sie nur einen Befehl namens `test`, der eine Fehlermeldung ausgibt.
+- `author`: Der Autor des Projekts.
+- `license`: Die Lizenz für das Projekt.
+- `dependencies`: Die Pakete, von denen Ihr Projekt abhängt, um ordnungsgemäß zu funktionieren. Diese Pakete werden in der Produktionsumgebung benötigt.
+- `devDependencies`: Die Pakete, die Ihr Projekt benötigt, um ordnungsgemäß zu funktionieren, aber nur in einer Entwicklungsumgebung. 
+Diese Pakete sind normalerweise nicht in der Produktionsumgebung erforderlich.
+
+Ich sehe, dass Sie in Ihrem `test` Skript nur eine Fehlermeldung angeben. 
+Normalerweise würden Sie hier ein Befehl haben, um Ihr Server zu starten. 
+Wenn Sie beispielsweise Express verwenden und Ihre Hauptdatei `index.js` ist, könnten Sie es mit `node index.js` starten. 
+Wenn Sie `nodemon` (ein Paket, das Ihr Node.js-Server jedes Mal neu startet, wenn Sie eine Datei ändern) verwenden möchten, könnten Sie `nodemon index.js` verwenden.
+
+Hier ist, wie es aussehen könnte:
+
+```json
+"scripts": {
+  "start": "nodemon index.js"
+},
+```
+
+Dann könnten Sie Ihren Server einfach starten, indem Sie `npm start` in Ihrem Terminal eingeben.
+
+
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"  //Befehle die mit npm run ausgeführt werden können. Momentan mit "test" Ausgabe einer Fehlermeldung
+    
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
